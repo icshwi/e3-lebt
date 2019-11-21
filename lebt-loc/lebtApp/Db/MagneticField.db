@@ -1,0 +1,128 @@
+# MAGNETIC FIELD / CURRENT
+
+record(calcout, "LEBT-010:PwrC-PSCH-01:CalcFld") {
+  field(DESC, "Calc field from current")
+  field(PREC, "9")
+  field(EGU, "T")
+  field(INPA, "LEBT-010:PwrC-PSCH-01:Current CPP")
+  field(CALC, "A*8.291E-4")
+  field(OUT, "LEBT-010:PwrC-PSCH-01:FldS PP")
+  field(OOPT, "Every Time")
+  field(TPRO, "0")
+}
+
+record(ao, "LEBT-010:PwrC-PSCH-01:FldS") {
+
+    field(DESC, "Set Magnetic Field")
+    field(SCAN, "Passive")
+    field(EGU,  "T")
+    field(PREC, "5")
+}
+
+
+record(calcout, "LEBT-010:PwrC-PSCH-01:CalcCur") {
+  field(DESC, "Calc Current from Field")
+  field(PREC, "9")
+  field(EGU, "A")
+  field(INPA, "LEBT-010:PwrC-PSCH-01:FldS CPP")
+  field(CALC, "A*(1/8.291E-4)")
+  field(OUT, "LEBT-010:PwrC-PSCH-01:Current PP")
+  field(OOPT, "Every Time")
+  field(TPRO, "0")
+}
+
+
+
+
+# READBACK for the Magnetic Field
+
+record(ai, "LEBT-010:PwrC-PSCH-01:FldRB") {
+  field(DESC, "Magnetic Field")
+  #field(SCAN, "Passive")						# I WANT It to be PASSIVE but it just does not work 
+  field(SCAN, "1 second")
+  field(PREC, "5")
+  field(LINR, "SLOPE")
+  field(EGU, "T")
+  field(ESLO, "8.291E-4")
+  field(DTYP, "Raw Soft Channel")
+  field(INP, "LEBT-010:PwrC-PSCH-01:OutputCurrent")
+}
+
+
+
+
+# NOT USED !!!!
+
+
+
+
+#record(calcout, "LEBT-010:PwrC-PSCH-01:CalcCur") {
+#  field(DESC, "Calc Current from Field")
+#  field(PREC, "6")
+#  field(EGU, "A")
+#  field(INPA, "LEBT-010:PwrC-PSCH-01:FldS NPP")
+#  field(CALC, "A*(1/8.291E-4)")
+#  field(OUT, "LEBT-010:PwrC-PSCH-01:Current PP")
+#  field(OOPT, "Every Time")
+#  field(TPRO, "0")
+#}
+
+
+#record(bi, "LEBT-010:PwrC-PSCH-01:FldRB") {
+#    field(DESC, "Magnetic Field ReadBack")
+#    field(DTYP, "stream")
+#    field(SCAN, "1 second")
+#    field(INP,  "LEBT-010:PwrC-PSCH-01:Enable")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#}
+
+#record(calcout, "LEBT-010:PwrC-PSCH-01:CalcFld") {
+#  field(DESC, "Calc field from current")
+#  field(PREC, "9")
+#  field(EGU, "T")
+#  field(INPA, "LEBT-010:PwrC-PSCH-01:CurS CPP")
+#  field(CALC, "A*8.291E-4")
+#  field(OUT, "LEBT-010:PwrC-PSCH-01:FldS PP")
+#  field(OOPT, "Every Time")
+#  field(TPRO, "0")
+#}
+
+#record(calc, "LEBT-010:PwrC-PSCH-01:CalcFld") {#$  field(DESC, "Calc field from current")
+# field(PREC, "9")
+# field(EGU, "T")
+# field(INPA, "LEBT-010:PwrC-PSCH-01:OutputCurrent CPP")
+# field(CALC, "A*3")
+#}
+
+
+
+
+## Voltage
+
+#record(ao, "LEBT-010:PwrC-PSCH-01:VolS") {
+#    field(DESC, "Set Voltage")
+#    field(EGU,  "V")
+#    field(HOPR, "0")
+#    field(LOPR, "-3500")
+#    field(FLNK, "LEBT-010:PwrC-PSCH-01:VolSCal")
+#}
+
+#record(calcout, "LEBT-010:PwrC-PSCH-01:VolSCal") {
+#    field(DESC, "Set Voltage calc")
+#    field(DTYP, "stream")
+#    field(OUT,  "@$(proto_file,undefined) set_voltage $(connection_name,undefined)")
+#    field(CALC, "A*(-1)")
+#    field(INPA, "LEBT-010:PwrC-PSCH-01:VolS")
+#}
+
+
+record(ao, "LEBT-010:PwrC-PSCH-01:CurrentTest") {
+
+    field(DESC, "Set Magnetic Field")
+#   field(SCAN, "Passive")
+    field(EGU,  "T")
+    field(PREC, "5")
+}
+
+

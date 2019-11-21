@@ -1,0 +1,2737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LEBT</name>
+  <macros>
+    <Isecsub>ISrc-010</Isecsub>
+    <Lsecsub>LEBT-010</Lsecsub>
+    <Sol1>PwrC-SolPS-01</Sol1>
+    <Sol2>PwrC-SolPS-02</Sol2>
+    <Str1H>PwrC-PSCH-01</Str1H>
+    <Str1V>PwrC-PSCV-01</Str1V>
+    <Str2H>PwrC-PSCH-02</Str2H>
+    <Str2V>PwrC-PSCV-02</Str2V>
+    <atu>ISS-ATU</atu>
+    <chopper>BMD-Chop</chopper>
+    <coil1>PWRC-CoilPS-01</coil1>
+    <coil2>PWRC-CoilPS-02</coil2>
+    <coil3>PWRC-CoilPS-03</coil3>
+    <hvps>ISS-HVPS</hvps>
+    <lebt>LNS-LEBT-010</lebt>
+    <lebt937b>VAC-VEG-10010</lebt937b>
+    <lebt946>VAC-VEVMC-10010</lebt946>
+    <magtr>ISS-Magtr</magtr>
+    <mks946>VAC-VEVMC-01100</mks946>
+    <plcsource>Vac-PLC-11111</plcsource>
+    <rep1>PwrC-RepPS-01</rep1>
+  </macros>
+  <width>1520</width>
+  <height>896</height>
+  <background_color>
+    <color red="220" green="220" blue="220">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle Template</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>1520</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <line_color>
+      <color name="IO Line" red="0" green="32" blue="92">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label Template</name>
+    <class>TITLE</class>
+    <text>LEBT</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>78</width>
+    <height use_class="true">48</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="IO Background" red="255" green="255" blue="205">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words use_class="true">false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Steerers</name>
+    <x>20</x>
+    <y>70</y>
+    <width>728</width>
+    <height>804</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey03-titlebar_6</name>
+      <width>728</width>
+      <height>804</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>BGGrey03-content-group_2</name>
+      <x>14</x>
+      <y>50</y>
+      <width>700</width>
+      <height>740</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>BGGrey03-background_2</name>
+        <width>700</width>
+        <height>740</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>5</corner_width>
+        <corner_height>5</corner_height>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_24</name>
+        <macros>
+          <Str>PwrC-PSCH-01</Str>
+          <StrBMD>BMD-CH-01</StrBMD>
+        </macros>
+        <x>20</x>
+        <y>20</y>
+        <width>320</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_39</name>
+          <text>H1</text>
+          <width>320</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_32</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>20</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_34</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>20</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_22</name>
+          <text>Mag. Field:</text>
+          <x>20</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_8</name>
+          <pv_name>$(Lsecsub):$(Str):FldS</pv_name>
+          <x>118</x>
+          <y>140</y>
+          <width>98</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>1.0E-4</increment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_7</name>
+          <pv_name>$(Lsecsub):$(Str):FldRB</pv_name>
+          <x>226</x>
+          <y>140</y>
+          <width>80</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_19</name>
+          <text>Polarity:</text>
+          <x>53</x>
+          <y>178</y>
+          <width>57</width>
+          <height>21</height>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <auto_size>true</auto_size>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_13</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+              <description>Reset</description>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Str):StatusReset</pv_name>
+          <text>Clear</text>
+          <x>20</x>
+          <y>243</y>
+          <width>127</width>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_28</name>
+          <pv_name>$(Lsecsub):$(Str):Enable</pv_name>
+          <x>170</x>
+          <y>290</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_2</name>
+          <pv_name>$(Lsecsub):$(Str):StatusLSB</pv_name>
+          <bit>0</bit>
+          <x>280</x>
+          <y>294</y>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_10</name>
+          <pv_name>$(Lsecsub):$(Str):Current</pv_name>
+          <x>118</x>
+          <y>100</y>
+          <width>98</width>
+          <format>0</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):OutputCurrent</pv_name>
+              <pv_name>$(Lsecsub):$(Str):Current</pv_name>
+            </rule>
+          </rules>
+          <minimum>-20.0</minimum>
+          <maximum>20.0</maximum>
+          <increment>0.1</increment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_9</name>
+          <pv_name>$(Lsecsub):$(Str):OutputCurrent</pv_name>
+          <x>226</x>
+          <y>100</y>
+          <width>80</width>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_10</name>
+          <pv_name>$(Lsecsub):$(Str):OutputVoltage</pv_name>
+          <x>226</x>
+          <y>60</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_12</name>
+          <pv_name>$(Lsecsub):$(Str):LimitMaxV</pv_name>
+          <x>126</x>
+          <y>60</y>
+          <width>90</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED</name>
+          <x>164</x>
+          <y>174</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>-</off_label>
+          <on_label>+</on_label>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <rules>
+            <rule name="Polarity -" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0&lt;0">
+                <value>
+                  <color name="ON" red="70" green="255" blue="70">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):OutputCurrent</pv_name>
+            </rule>
+          </rules>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_11</name>
+          <x>129</x>
+          <y>174</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>+</off_label>
+          <on_label>+</on_label>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <rules>
+            <rule name="Polarity -" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0&gt;0">
+                <value>
+                  <color name="ON" red="70" green="255" blue="70">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):OutputCurrent</pv_name>
+            </rule>
+          </rules>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_12</name>
+          <pv_name>$(Lsecsub):$(Str):StatusLSB</pv_name>
+          <bit>1</bit>
+          <x>171</x>
+          <y>243</y>
+          <width>100</width>
+          <height>30</height>
+          <off_label>OK</off_label>
+          <off_color>
+            <color name="OK" red="61" green="216" blue="61">
+            </color>
+          </off_color>
+          <on_label>FAULT</on_label>
+          <on_color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </on_color>
+          <square>true</square>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_15</name>
+          <pv_name>$(Lsecsub):$(Str):StatusLSB</pv_name>
+          <bit>5</bit>
+          <x>33</x>
+          <y>290</y>
+          <width>100</width>
+          <height>30</height>
+          <off_label>CURRENT</off_label>
+          <off_color>
+            <color name="OK" red="61" green="216" blue="61">
+            </color>
+          </off_color>
+          <on_label>VOLTAGE</on_label>
+          <on_color>
+            <color name="LED-ORANGE-ON" red="255" green="175" blue="81">
+            </color>
+          </on_color>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_25</name>
+        <macros>
+          <Str>PwrC-PSCV-01</Str>
+          <StrBMD>BMD-CV-01</StrBMD>
+        </macros>
+        <x>360</x>
+        <y>20</y>
+        <width>320</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_40</name>
+          <text>V1</text>
+          <width>320</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_33</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>20</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_35</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>20</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_23</name>
+          <text>Mag. Field:</text>
+          <x>20</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_9</name>
+          <pv_name>$(Lsecsub):$(Str):FldS</pv_name>
+          <x>126</x>
+          <y>140</y>
+          <width>90</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>1.0E-4</increment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_8</name>
+          <pv_name>$(Lsecsub):$(Str):FldRB</pv_name>
+          <x>226</x>
+          <y>140</y>
+          <width>80</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_9</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <bit>0</bit>
+          <x>171</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>-</off_label>
+          <off_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </off_color>
+          <on_label>-</on_label>
+          <on_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_10</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <x>136</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>+</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>+</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_24</name>
+          <text>Polarity:</text>
+          <x>53</x>
+          <y>210</y>
+          <width>57</width>
+          <height>21</height>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <auto_size>true</auto_size>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_14</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Str):Rst</pv_name>
+          <text>Reset</text>
+          <x>20</x>
+          <y>290</y>
+          <width>127</width>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_29</name>
+          <pv_name>$(Lsecsub):$(Str):PwrS</pv_name>
+          <x>170</x>
+          <y>290</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_6</name>
+          <pv_name>$(Lsecsub):$(Str):PwrR</pv_name>
+          <x>280</x>
+          <y>294</y>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_14</name>
+          <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+          <x>126</x>
+          <y>100</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+              <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+            </rule>
+          </rules>
+          <maximum>120.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_11</name>
+          <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+          <x>226</x>
+          <y>100</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_16</name>
+          <pv_name>$(Lsecsub):$(Str):VolS</pv_name>
+          <x>126</x>
+          <y>60</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <maximum>10.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_14</name>
+          <pv_name>$(Lsecsub):$(Str):VolR</pv_name>
+          <x>226</x>
+          <y>60</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_26</name>
+        <macros>
+          <Str>PwrC-PSCV-02</Str>
+          <StrBMD>BMD-CV-02</StrBMD>
+        </macros>
+        <x>360</x>
+        <y>380</y>
+        <width>320</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_41</name>
+          <text>V2</text>
+          <width>320</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_34</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>20</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_36</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>20</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_25</name>
+          <text>Mag. Field:</text>
+          <x>20</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_17</name>
+          <pv_name>$(Lsecsub):$(Str):FldS</pv_name>
+          <x>126</x>
+          <y>140</y>
+          <width>90</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>1.0E-4</increment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_15</name>
+          <pv_name>$(Lsecsub):$(Str):FldRB</pv_name>
+          <x>226</x>
+          <y>140</y>
+          <width>80</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_12</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <bit>0</bit>
+          <x>171</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>-</off_label>
+          <off_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </off_color>
+          <on_label>-</on_label>
+          <on_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_14</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <x>136</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>+</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>+</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_26</name>
+          <text>Polarity:</text>
+          <x>53</x>
+          <y>210</y>
+          <width>57</width>
+          <height>21</height>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <auto_size>true</auto_size>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_16</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Str):Rst</pv_name>
+          <text>Reset</text>
+          <x>20</x>
+          <y>290</y>
+          <width>127</width>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_31</name>
+          <pv_name>$(Lsecsub):$(Str):PwrS</pv_name>
+          <x>170</x>
+          <y>290</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_11</name>
+          <pv_name>$(Lsecsub):$(Str):PwrR</pv_name>
+          <x>280</x>
+          <y>294</y>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_18</name>
+          <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+          <x>126</x>
+          <y>100</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+              <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+            </rule>
+          </rules>
+          <maximum>120.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_16</name>
+          <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+          <x>226</x>
+          <y>100</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_21</name>
+          <pv_name>$(Lsecsub):$(Str):VolS</pv_name>
+          <x>126</x>
+          <y>60</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <maximum>10.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_17</name>
+          <pv_name>$(Lsecsub):$(Str):VolR</pv_name>
+          <x>226</x>
+          <y>60</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_27</name>
+        <macros>
+          <Str>PwrC-PSCH-02</Str>
+          <StrBMD>BMD-CH-02</StrBMD>
+        </macros>
+        <x>20</x>
+        <y>380</y>
+        <width>320</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_42</name>
+          <text>H2</text>
+          <width>320</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_35</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>20</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_37</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>20</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_27</name>
+          <text>Mag. Field:</text>
+          <x>20</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_22</name>
+          <pv_name>$(Lsecsub):$(Str):FldS</pv_name>
+          <x>126</x>
+          <y>140</y>
+          <width>90</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>1.0E-4</increment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_18</name>
+          <pv_name>$(Lsecsub):$(Str):FldRB</pv_name>
+          <x>226</x>
+          <y>140</y>
+          <width>80</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_15</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <bit>0</bit>
+          <x>171</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>-</off_label>
+          <off_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </off_color>
+          <on_label>-</on_label>
+          <on_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_16</name>
+          <pv_name>$(Lsecsub):$(StrBMD):PolR</pv_name>
+          <x>136</x>
+          <y>205</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>+</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>+</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="21.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_28</name>
+          <text>Polarity:</text>
+          <x>53</x>
+          <y>210</y>
+          <width>57</width>
+          <height>21</height>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <auto_size>true</auto_size>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_18</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Str):Rst</pv_name>
+          <text>Reset</text>
+          <x>20</x>
+          <y>290</y>
+          <width>127</width>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_32</name>
+          <pv_name>$(Lsecsub):$(Str):PwrS</pv_name>
+          <x>170</x>
+          <y>290</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_13</name>
+          <pv_name>$(Lsecsub):$(Str):PwrR</pv_name>
+          <x>280</x>
+          <y>294</y>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_23</name>
+          <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+          <x>126</x>
+          <y>100</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+              <pv_name>$(Lsecsub):$(Str):CurS</pv_name>
+            </rule>
+          </rules>
+          <maximum>120.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_21</name>
+          <pv_name>$(Lsecsub):$(Str):CurR</pv_name>
+          <x>226</x>
+          <y>100</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_24</name>
+          <pv_name>$(Lsecsub):$(Str):VolS</pv_name>
+          <x>126</x>
+          <y>60</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <maximum>10.0</maximum>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_22</name>
+          <pv_name>$(Lsecsub):$(Str):VolR</pv_name>
+          <x>226</x>
+          <y>60</y>
+          <width>80</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Magnetic System_5</name>
+      <text>Steerers</text>
+      <x>20</x>
+      <width>198</width>
+      <height>50</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="24.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TEXT-LIGHT" red="230" green="230" blue="230">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED Template_17</name>
+      <x>635</x>
+      <y>10</y>
+      <width>79</width>
+      <height>30</height>
+      <off_label>CONNECTION</off_label>
+      <off_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_label>CONNECTION</on_label>
+      <on_color>
+        <color name="LED-RED-ON" red="255" green="60" blue="46">
+        </color>
+      </on_color>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <square>true</square>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Value" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3==0">
+            <value>
+              <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="true">
+            <value>
+              <color name="LED-RED-ON" red="255" green="60" blue="46">
+              </color>
+            </value>
+          </exp>
+          <pv_name>$(Lsecsub):$(Str1H):PwrR.SEVR</pv_name>
+          <pv_name>$(Lsecsub):$(Str1V):PwrR.SEVR</pv_name>
+          <pv_name>$(Lsecsub):$(Str2H):PwrR.SEVR</pv_name>
+          <pv_name>$(Lsecsub):$(Str2V):PwrR.SEVR</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED Template_18</name>
+      <x>556</x>
+      <y>10</y>
+      <width>70</width>
+      <height>30</height>
+      <off_label>INTERLOCK</off_label>
+      <off_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_label>INTERLOCK</on_label>
+      <on_color>
+        <color name="LED-RED-ON" red="255" green="60" blue="46">
+        </color>
+      </on_color>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <square>true</square>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Interlock" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0 &amp;&amp; pv1==0">
+            <value>
+              <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="true">
+            <value>
+              <color name="LED-RED-ON" red="255" green="60" blue="46">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ISrc-010:ISS-Intf-HMI:EVENT_D_MEMO</pv_name>
+          <pv_name>ISrc-010:ISS-Intf-HMI:EVENT_E_MEMO</pv_name>
+        </rule>
+      </rules>
+      <tooltip></tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <file>steerers.bob</file>
+          <target>standalone</target>
+          <description>Expert</description>
+        </action>
+      </actions>
+      <x>460</x>
+      <y>10</y>
+      <width>80</width>
+      <height>29</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>SOL2_1</name>
+    <x>770</x>
+    <y>70</y>
+    <width>353</width>
+    <height>804</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey03-titlebar_3</name>
+      <width>353</width>
+      <height>804</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey03-title_3</name>
+      <text>Solenoids</text>
+      <x>20</x>
+      <width>190</width>
+      <height>50</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="24.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TEXT-LIGHT" red="230" green="230" blue="230">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>BGGrey03-content-group_4</name>
+      <x>14</x>
+      <y>50</y>
+      <width>325</width>
+      <height>740</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>BGGrey03-background_4</name>
+        <width>325</width>
+        <height>740</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>5</corner_width>
+        <corner_height>5</corner_height>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Sol1</name>
+        <macros>
+          <Sol>PwrC-SolPS-01</Sol>
+        </macros>
+        <x>20</x>
+        <y>20</y>
+        <width>285</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_54</name>
+          <text>Solenoid 1</text>
+          <width>285</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_73</name>
+          <text>Over Voltage Protection</text>
+          <x>85</x>
+          <y>214</y>
+          <width>163</width>
+          <foreground_color>
+            <color red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_75</name>
+          <pv_name>$(Lsecsub):$(Sol):OvpErrR</pv_name>
+          <x>44</x>
+          <y>210</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-RED-OFF" red="110" green="101" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-RED-ON" red="255" green="60" blue="46">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_27</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Sol):Rst</pv_name>
+          <text>Reset</text>
+          <x>21</x>
+          <y>289</y>
+          <width>105</width>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_4</name>
+          <pv_name>$(Lsecsub):$(Sol):PwrR</pv_name>
+          <x>254</x>
+          <y>294</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_23</name>
+          <pv_name>$(Lsecsub):$(Sol):FldRB</pv_name>
+          <x>202</x>
+          <y>140</y>
+          <width>70</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_24</name>
+          <pv_name>$(Lsecsub):$(Sol):CurR</pv_name>
+          <x>202</x>
+          <y>100</y>
+          <width>70</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_25</name>
+          <pv_name>$(Lsecsub):$(Sol):VolR</pv_name>
+          <x>202</x>
+          <y>60</y>
+          <width>70</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_36</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>4</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_38</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>4</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_29</name>
+          <text>Mag. Field:</text>
+          <x>4</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_25</name>
+          <pv_name>$(Lsecsub):$(Sol):FldS</pv_name>
+          <x>106</x>
+          <y>140</y>
+          <width>90</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>0.001</increment>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_26</name>
+          <pv_name>$(Lsecsub):$(Sol):CurS</pv_name>
+          <x>106</x>
+          <y>100</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Sol):CurR</pv_name>
+              <pv_name>$(Lsecsub):$(Sol):CurS</pv_name>
+            </rule>
+          </rules>
+          <maximum>500.0</maximum>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_27</name>
+          <pv_name>$(Lsecsub):$(Sol):VolS</pv_name>
+          <x>106</x>
+          <y>60</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <maximum>15.0</maximum>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_25</name>
+          <pv_name>$(Lsecsub):$(Sol):PwrS</pv_name>
+          <x>151</x>
+          <y>289</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Sol1_1</name>
+        <macros>
+          <Sol>PwrC-SolPS-02</Sol>
+        </macros>
+        <x>20</x>
+        <y>380</y>
+        <width>285</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_55</name>
+          <text>Solenoid 2</text>
+          <width>285</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_74</name>
+          <text>Over Voltage Protection</text>
+          <x>85</x>
+          <y>214</y>
+          <width>163</width>
+          <foreground_color>
+            <color red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_76</name>
+          <pv_name>$(Lsecsub):$(Sol):OvpErrR</pv_name>
+          <x>44</x>
+          <y>210</y>
+          <width>30</width>
+          <height>30</height>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-RED-OFF" red="110" green="101" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-RED-ON" red="255" green="60" blue="46">
+            </color>
+          </on_color>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="BLACK-TEXT" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button Template_28</name>
+          <actions>
+            <action type="write_pv">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(Lsecsub):$(Sol):Rst</pv_name>
+          <text>Reset</text>
+          <x>21</x>
+          <y>289</y>
+          <width>105</width>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>Text Update_5</name>
+          <pv_name>$(Lsecsub):$(Sol):PwrR</pv_name>
+          <x>254</x>
+          <y>294</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_26</name>
+          <pv_name>$(Lsecsub):$(Sol):FldRB</pv_name>
+          <x>202</x>
+          <y>140</y>
+          <width>70</width>
+          <format>2</format>
+          <precision>2</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_27</name>
+          <pv_name>$(Lsecsub):$(Sol):CurR</pv_name>
+          <x>202</x>
+          <y>100</y>
+          <width>70</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_28</name>
+          <pv_name>$(Lsecsub):$(Sol):VolR</pv_name>
+          <x>202</x>
+          <y>60</y>
+          <width>70</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_37</name>
+          <class>CAPTION</class>
+          <text>Current:</text>
+          <x>4</x>
+          <y>100</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Set Position Caption_39</name>
+          <class>CAPTION</class>
+          <text>Max Voltage:</text>
+          <x>4</x>
+          <y>60</y>
+          <width>90</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_75</name>
+          <text>Mag. Field:</text>
+          <x>4</x>
+          <y>140</y>
+          <width>90</width>
+          <foreground_color>
+            <color name="Black" red="0" green="0" blue="0">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="Blue" red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_28</name>
+          <pv_name>$(Lsecsub):$(Sol):FldS</pv_name>
+          <x>106</x>
+          <y>140</y>
+          <width>90</width>
+          <format>2</format>
+          <precision>2</precision>
+          <actions>
+          </actions>
+          <maximum>0.0086</maximum>
+          <increment>0.001</increment>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_29</name>
+          <pv_name>$(Lsecsub):$(Sol):CurS</pv_name>
+          <x>106</x>
+          <y>100</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;1">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>$(Lsecsub):$(Sol):CurS</pv_name>
+              <pv_name>$(Lsecsub):$(Sol):CurR</pv_name>
+            </rule>
+          </rules>
+          <maximum>500.0</maximum>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_30</name>
+          <pv_name>$(Lsecsub):$(Sol):VolS</pv_name>
+          <x>106</x>
+          <y>60</y>
+          <width>90</width>
+          <format>0</format>
+          <precision>1</precision>
+          <actions>
+          </actions>
+          <maximum>15.0</maximum>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button Template_26</name>
+          <pv_name>$(Lsecsub):$(Sol):PwrS</pv_name>
+          <x>151</x>
+          <y>289</y>
+          <off_label>OFF</off_label>
+          <off_color>
+            <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
+            </color>
+          </off_color>
+          <on_label>ON</on_label>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <actions>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED Template_22</name>
+      <x>260</x>
+      <y>10</y>
+      <width>79</width>
+      <height>30</height>
+      <off_label>CONNECTION</off_label>
+      <off_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_label>CONNECTION</on_label>
+      <on_color>
+        <color name="LED-RED-ON" red="255" green="60" blue="46">
+        </color>
+      </on_color>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <square>true</square>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Connection" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0">
+            <value>
+              <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="true">
+            <value>
+              <color name="LED-RED-ON" red="255" green="60" blue="46">
+              </color>
+            </value>
+          </exp>
+          <pv_name>$(Lsecsub):$(Sol1):PwrR.SEVR</pv_name>
+          <pv_name>$(Lsecsub):$(Sol2):PwrR.SEVR</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_5</name>
+      <actions>
+        <action type="open_display">
+          <file>solenoids.bob</file>
+          <target>standalone</target>
+          <description>Expert</description>
+        </action>
+      </actions>
+      <x>128</x>
+      <y>10</y>
+      <width>50</width>
+      <height>29</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED Template_19</name>
+      <x>185</x>
+      <y>10</y>
+      <width>70</width>
+      <height>30</height>
+      <off_label>INTERLOCK</off_label>
+      <off_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_label>INTERLOCK</on_label>
+      <on_color>
+        <color name="LED-RED-ON" red="255" green="60" blue="46">
+        </color>
+      </on_color>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <square>true</square>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Interlock" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0 &amp;&amp; pv1==0">
+            <value>
+              <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="true">
+            <value>
+              <color name="LED-RED-ON" red="255" green="60" blue="46">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ISrc-010:ISS-Intf-HMI:EVENT_D_MEMO</pv_name>
+          <pv_name>ISrc-010:ISS-Intf-HMI:EVENT_E_MEMO</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>SOL2_2</name>
+    <x>1140</x>
+    <y>70</y>
+    <width>360</width>
+    <height>806</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey03-titlebar_4</name>
+      <width>360</width>
+      <height>806</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey03-title_4</name>
+      <text>Chopper</text>
+      <x>20</x>
+      <width>190</width>
+      <height>50</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="24.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TEXT-LIGHT" red="230" green="230" blue="230">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>BGGrey03-content-group_5</name>
+      <x>14</x>
+      <y>50</y>
+      <width>332</width>
+      <height>740</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>BGGrey03-background_5</name>
+        <width>332</width>
+        <height>740</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>5</corner_width>
+        <corner_height>5</corner_height>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_34</name>
+        <x>20</x>
+        <y>20</y>
+        <width>292</width>
+        <height>160</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_56</name>
+          <text>Timing Source</text>
+          <width>292</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_82</name>
+          <text>Pulse  Frequency:</text>
+          <x>14</x>
+          <y>58</y>
+          <width>130</width>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_86</name>
+          <text>Pulse Width (us):</text>
+          <x>14</x>
+          <y>98</y>
+          <width>130</width>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_42</name>
+          <pv_name>$(Isecsub):TS-EVG-01:Mxc1-Frequency-SP</pv_name>
+          <x>154</x>
+          <y>58</y>
+          <width>120</width>
+          <precision>1</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_43</name>
+          <pv_name>$(Isecsub):ISS-EVR-Magtr:Pul0-Width-SP</pv_name>
+          <x>154</x>
+          <y>98</y>
+          <width>120</width>
+          <precision>0</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_35</name>
+        <x>20</x>
+        <y>377</y>
+        <width>292</width>
+        <height>340</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_57</name>
+          <text>HV Power Supply</text>
+          <width>292</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>X Actual Position Caption_47</name>
+          <class>CAPTION</class>
+          <text>Voltage Readback:</text>
+          <x>15</x>
+          <y>85</y>
+          <width>130</width>
+          <foreground_color use_class="true">
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <horizontal_alignment use_class="true">2</horizontal_alignment>
+          <vertical_alignment use_class="true">1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_94</name>
+          <text>Voltage SetPoint:</text>
+          <x>15</x>
+          <y>55</y>
+          <width>130</width>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_44</name>
+          <pv_name>${Lsecsub}:${chopper}:VolR</pv_name>
+          <x>154</x>
+          <y>85</y>
+          <width>120</width>
+          <precision>3</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_96</name>
+          <text>Currrent Readback:</text>
+          <x>15</x>
+          <y>116</y>
+          <width>130</width>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update Template_45</name>
+          <pv_name>${Lsecsub}:${chopper}:CurR</pv_name>
+          <x>154</x>
+          <y>116</y>
+          <width>120</width>
+          <precision>3</precision>
+          <wrap_words>false</wrap_words>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>label_ChopperStatus1</name>
+          <text>Power System Status</text>
+          <x>56</x>
+          <y>183</y>
+          <width>229</width>
+          <font>
+            <font name="NORMAL-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="16.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_18</name>
+          <text>Voltage Status</text>
+          <x>56</x>
+          <y>224</y>
+          <width>229</width>
+          <font>
+            <font name="NORMAL-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="16.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="White" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_48</name>
+          <pv_name>$(Lsecsub):BMD-Chop:PwrSysOK</pv_name>
+          <x>26</x>
+          <y>183</y>
+          <off_color>
+            <color name="LED-RED-ON" red="255" green="60" blue="46">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <foreground_color>
+            <color name="GRAY" red="169" green="169" blue="169">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="Masking" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>
+                  <color red="50" green="50" blue="50" alpha="178">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==1">
+                <value>
+                  <color name="LED-ORANGE-ON" red="255" green="175" blue="81">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>ISrc-010:ISS-Intf-HMI:F_ChopPwrSysOK</pv_name>
+            </rule>
+          </rules>
+          <tooltip>$(pv_name)
+$(pv_value)
+</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_50</name>
+          <pv_name>$(Lsecsub):BMD-Chop:ChopVoltStatusR</pv_name>
+          <x>26</x>
+          <y>224</y>
+          <off_color>
+            <color name="LED-RED-ON" red="255" green="60" blue="46">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <foreground_color>
+            <color name="GRAY" red="169" green="169" blue="169">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="Masking" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>
+                  <color red="50" green="50" blue="50" alpha="178">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==1">
+                <value>
+                  <color name="LED-ORANGE-ON" red="255" green="175" blue="81">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>ISrc-010:ISS-Intf-HMI:F_ChopVoltAlarm</pv_name>
+            </rule>
+          </rules>
+          <tooltip>$(pv_name)
+$(pv_value)
+</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner</name>
+          <pv_name>${Lsecsub}:${chopper}:VolS</pv_name>
+          <x>154</x>
+          <y>55</y>
+          <width>120</width>
+          <precision>3</precision>
+          <rules>
+            <rule name="RB Match" prop_id="background_color" out_exp="false">
+              <exp bool_exp="abs(pv0-pv1)&gt;0.7">
+                <value>
+                  <color name="ATTENTION" red="252" green="242" blue="17">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>${Lsecsub}:${chopper}:VolS</pv_name>
+              <pv_name>${Lsecsub}:${chopper}:VolR</pv_name>
+            </rule>
+          </rules>
+          <maximum>10.0</maximum>
+          <increment>0.1</increment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_4</name>
+          <text>Output Status</text>
+          <y>263</y>
+          <width>292</width>
+          <height>29</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>2</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_51</name>
+          <pv_name>$(Lsecsub):BMD-Chop:HVEnCmdRB</pv_name>
+          <x>26</x>
+          <y>297</y>
+          <off_color>
+            <color name="LED-RED-ON" red="255" green="60" blue="46">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+            </color>
+          </on_color>
+          <foreground_color>
+            <color name="GRAY" red="169" green="169" blue="169">
+            </color>
+          </foreground_color>
+          <actions>
+          </actions>
+          <rules>
+            <rule name="Masking" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>
+                  <color red="50" green="50" blue="50" alpha="178">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==1">
+                <value>
+                  <color name="LED-ORANGE-ON" red="255" green="175" blue="81">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>ISrc-010:ISS-Intf-HMI:F_ChopHVEnCmd</pv_name>
+            </rule>
+          </rules>
+          <tooltip>$(pv_name)
+$(pv_value)
+</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>LGGrey02_36</name>
+        <x>20</x>
+        <y>199</y>
+        <width>292</width>
+        <height>160</height>
+        <style>3</style>
+        <widget type="label" version="2.0.0">
+          <name>LGGrey02-title_58</name>
+          <text>Timing Chopper</text>
+          <width>292</width>
+          <height>40</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="GROUP-TEXT" red="25" green="25" blue="25">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="RED-BORDER" red="150" green="8" blue="16">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_90</name>
+          <text>Pulse Width (us):</text>
+          <x>15</x>
+          <y>58</y>
+          <width>130</width>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label Template_91</name>
+          <text>Delay (us):</text>
+          <x>15</x>
+          <y>99</y>
+          <width>130</width>
+          <height>21</height>
+          <background_color>
+            <color name="IO Background" red="255" green="255" blue="205">
+            </color>
+          </background_color>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color name="IO Border" red="215" green="215" blue="215">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_42</name>
+          <pv_name>$(Isecsub):ISS-EVR-Magtr:Pul1-Width-SP</pv_name>
+          <x>155</x>
+          <y>58</y>
+          <width>120</width>
+          <format>0</format>
+          <precision>3</precision>
+          <actions>
+          </actions>
+          <maximum>8000.0</maximum>
+        </widget>
+        <widget type="spinner" version="2.0.0">
+          <name>Spinner Template_43</name>
+          <pv_name>$(Isecsub):ISS-EVR-Magtr:Pul1-Delay-SP</pv_name>
+          <x>155</x>
+          <y>99</y>
+          <width>120</width>
+          <format>0</format>
+          <precision>3</precision>
+          <actions>
+          </actions>
+          <minimum>-8000.0</minimum>
+          <maximum>8000.0</maximum>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>label_ChopperEnable</name>
+        <text>Power Supply Enable Cmd</text>
+        <x>96</x>
+        <y>674</y>
+        <width>229</width>
+        <font>
+          <font name="NORMAL-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="White" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>window_ChopperEnable</name>
+        <x>20</x>
+        <y>640</y>
+        <width>292</width>
+        <height>78</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <corner_width>5</corner_width>
+        <corner_height>5</corner_height>
+      </widget>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED Template_7</name>
+      <pv_name>ISrc-010:ISS-Intf-HMI:EVENT_G_MEMO</pv_name>
+      <x>270</x>
+      <y>10</y>
+      <width>70</width>
+      <height>30</height>
+      <off_label>INTERLOCK</off_label>
+      <off_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_label>INTERLOCK</on_label>
+      <on_color>
+        <color name="LED-RED-ON" red="255" green="60" blue="46">
+        </color>
+      </on_color>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <square>true</square>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_12</name>
+    <actions>
+      <action type="open_display">
+        <file>Interlock/Main.bob</file>
+        <target>standalone</target>
+        <description>Interlock</description>
+      </action>
+    </actions>
+    <x>1291</x>
+    <y>10</y>
+    <width>200</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_13</name>
+    <actions>
+      <action type="open_display">
+        <file>isrc.bob</file>
+        <target>standalone</target>
+        <description>ISrc</description>
+      </action>
+    </actions>
+    <x>1076</x>
+    <y>10</y>
+    <width>200</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

@@ -1,0 +1,16 @@
+file MagneticField.template
+{
+    {
+        secsub          = "LEBT-010",
+        disdevidx       = "PwrC-PSCH-01",
+#        connection_name = "RepPS-01"
+        Amp2Tesla_calib = "8.291E-4"
+        VMAX            = "0"
+        VMIN            = "-3500"
+        IMAX            = "0"
+        IMIN            = "-10"
+        VUNIT           = "V"
+        IUNIT           = "mA"
+        CUR_PREC        = "0"
+    }
+}

@@ -1,0 +1,128 @@
+# MAGNETIC FIELD / CURRENT
+
+record(calcout, "${secsub}:${disdevidx}:CalcFld") {
+  field(DESC, "Calc field from current")
+  field(PREC, "9")
+  field(EGU, "T")
+  field(INPA, "${secsub}:${disdevidx}:Current CPP")
+  field(CALC, "A*${Amp2Tesla_calib}")
+  field(OUT, "${secsub}:${disdevidx}:FldS PP")
+  field(OOPT, "Every Time")
+  field(TPRO, "0")
+}
+
+record(ao, "${secsub}:${disdevidx}:FldS") {
+
+    field(DESC, "Set Magnetic Field")
+    field(SCAN, "Passive")
+    field(EGU,  "T")
+    field(PREC, "5")
+}
+
+
+record(calcout, "${secsub}:${disdevidx}:CalcCur") {
+  field(DESC, "Calc Current from Field")
+  field(PREC, "9")
+  field(EGU, "A")
+  field(INPA, "${secsub}:${disdevidx}:FldS CPP")
+  field(CALC, "A*(1/${Amp2Tesla_calib})")
+  field(OUT, "${secsub}:${disdevidx}:Current PP")
+  field(OOPT, "Every Time")
+  field(TPRO, "0")
+}
+
+
+
+
+# READBACK for the Magnetic Field
+
+record(ai, "${secsub}:${disdevidx}:FldRB") {
+  field(DESC, "Magnetic Field")
+  #field(SCAN, "Passive")						# I WANT It to be PASSIVE but it just does not work 
+  field(SCAN, "1 second")
+  field(PREC, "5")
+  field(LINR, "SLOPE")
+  field(EGU, "T")
+  field(ESLO, "${Amp2Tesla_calib}")
+  field(DTYP, "Raw Soft Channel")
+  field(INP, "${secsub}:${disdevidx}:OutputCurrent")
+}
+
+
+
+
+# NOT USED !!!!
+
+
+
+
+#record(calcout, "${secsub}:${disdevidx}:CalcCur") {
+#  field(DESC, "Calc Current from Field")
+#  field(PREC, "6")
+#  field(EGU, "A")
+#  field(INPA, "${secsub}:${disdevidx}:FldS NPP")
+#  field(CALC, "A*(1/${Amp2Tesla_calib})")
+#  field(OUT, "${secsub}:${disdevidx}:Current PP")
+#  field(OOPT, "Every Time")
+#  field(TPRO, "0")
+#}
+
+
+#record(bi, "${secsub}:${disdevidx}:FldRB") {
+#    field(DESC, "Magnetic Field ReadBack")
+#    field(DTYP, "stream")
+#    field(SCAN, "1 second")
+#    field(INP,  "${secsub}:${disdevidx}:Enable")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#}
+
+#record(calcout, "${secsub}:${disdevidx}:CalcFld") {
+#  field(DESC, "Calc field from current")
+#  field(PREC, "9")
+#  field(EGU, "T")
+#  field(INPA, "${secsub}:${disdevidx}:CurS CPP")
+#  field(CALC, "A*${Amp2Tesla_calib}")
+#  field(OUT, "${secsub}:${disdevidx}:FldS PP")
+#  field(OOPT, "Every Time")
+#  field(TPRO, "0")
+#}
+
+#record(calc, "${secsub}:${disdevidx}:CalcFld") {#$  field(DESC, "Calc field from current")
+# field(PREC, "9")
+# field(EGU, "T")
+# field(INPA, "${secsub}:${disdevidx}:OutputCurrent CPP")
+# field(CALC, "A*3")
+#}
+
+
+
+
+## Voltage
+
+#record(ao, "${secsub}:${disdevidx}:VolS") {
+#    field(DESC, "Set Voltage")
+#    field(EGU,  "${VUNIT}")
+#    field(HOPR, "${VMAX}")
+#    field(LOPR, "${VMIN}")
+#    field(FLNK, "${secsub}:${disdevidx}:VolSCal")
+#}
+
+#record(calcout, "${secsub}:${disdevidx}:VolSCal") {
+#    field(DESC, "Set Voltage calc")
+#    field(DTYP, "stream")
+#    field(OUT,  "@${proto_file} set_voltage ${connection_name}")
+#    field(CALC, "A*(-1)")
+#    field(INPA, "${secsub}:${disdevidx}:VolS")
+#}
+
+
+record(ao, "${secsub}:${disdevidx}:CurrentTest") {
+
+    field(DESC, "Set Magnetic Field")
+#   field(SCAN, "Passive")
+    field(EGU,  "T")
+    field(PREC, "5")
+}
+
+
